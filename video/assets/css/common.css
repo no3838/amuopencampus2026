@@ -1,0 +1,632 @@
+@charset "utf-8";
+
+/* ----------------------------------------------------
+element base setting (common)
+---------------------------------------------------- */
+body {
+  color: #000;
+  line-height: 1.8; 
+  background: #fff;
+}
+a {
+  color: #000; 
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.clickable a, .clickable a:hover {
+  color: white;
+}
+.linkText{color:#ff6943; text-decoration: underline;}
+#mainContainer {width: 100%; padding-top:min(8.3vw, 100px);  overflow: hidden; }
+.flex {display: flex; display: -webkit-flex; justify-content: space-between; flex-wrap: wrap;}
+.inrContent {width: 90%; max-width: 1200px; margin-left: auto; margin-right: auto; position: relative;}
+img {width: 100%; height: auto;}
+
+.br_spOnly{display:none;}
+.br_pcOnly{display:block;}
+span .error{color:#ff3333!important;}
+
+
+/* ----------------------------------------------------
+header (common)
+---------------------------------------------------- */
+#header  {position: fixed; left: 0; top: 0; z-index: 99; width: 100%; height: min(8.3vw, 100px); background: #0054A6; padding: min(1.66vw,20px) min(3.75vw,45px); display: flex; display: -webkit-flex; align-items: center; justify-content: space-between;}
+#header #hd-logo img {height: min(5.3vw, 64px); width: auto;}
+
+#btnGlobal {position: absolute; right: min(3.75vw,45px); top: min(1.66vw,20px); height: min( 5vw , 60px); width: min( 5vw , 60px);  z-index: 120; display: flex; display: -webkit-flex; justify-content:center; align-items: center; background: #fff; border-radius: 50%; cursor: pointer; flex-direction: column;}
+#btnGlobal .btnWrapGlobal { width: min( 2.33vw , 28px ); height: min(1.75vw , 21px); position: relative;}
+#btnGlobal .btnLine { height: 2px; background: #0054A6; position: absolute; right:0; width: 100%;}
+#btnGlobal .btnLine.btnLineT {  top: 0;}
+#btnGlobal .btnLine.btnLineM { top: 50%; transform: translateY(-50%);}
+#btnGlobal .btnLine.btnLineB { bottom: 0; }
+#btnGlobal.active .btnLine.btnLineT { display: none;}
+#btnGlobal.active .btnLine.btnLineM { transform: translateY(0) rotate(45deg) ;}
+#btnGlobal.active .btnLine.btnLineB { transform: rotate(-45deg); bottom:inherit; top: 50%;}
+#btnGlobal .btnLine.btnLineM, #btnGlobal .btnLine.btnLineB {-moz-transition: all, ease-in-out, 0.3s;  -o-transition: all, ease-in-out, 0.3s;  -webkit-transition: all, ease-in-out, 0.3s; transition: all, ease-in-out, 0.3s;}
+#grandMenu {background: rgba(255,255,255,0.9); width: 100%; height: 100%; position: fixed; z-index: 100;  left: 0; top: 0; display: none; overflow: auto; padding: min(10.8vw, 130px) 8%;}
+#grandMenu a {color: #0054A6;}
+#grandMenu #navGlobal {width: 100%; max-width: 960px; margin: 0 auto;}
+#grandMenu #navGlobal li { font-size: min( 1.66vw , 2rem); border-bottom: 1px dashed #333; line-height: 1;}
+#grandMenu #navGlobal li a {display:  block; padding: min(2vw , 25px) 0; position: relative;}
+#grandMenu #navGlobal li a::after {content:""; position: absolute; right: min(1.25vw, 15px); top: 50%; width: min(0.83vw, 10px); height: min(0.83vw, 10px); border-top:1px solid #333; border-right: 1px solid #333; transform:  rotate(45deg) translateX(-50%);}
+
+
+/* ----------------------------------------------------
+footer (common)
+---------------------------------------------------- */
+#footer {background: url("../img/footBack.png") no-repeat 0 0; background-size: cover; position: relative; padding-top: 11.5vw; margin-top: 5vw; /*プレゼンテーションがオープンになったらmargin-top削除*/}
+.ftLogo{position: absolute; left: 50%; top: 0%; transform: translateX(-50%); color: #1C547B; opacity: 0.2; font-size: 9.2vw; text-align: center; white-space:nowrap; overflow: hidden; font-family: 'Jost', sans-serif; font-weight: 800;}
+.ftBut{width:80%; max-width: 1200px; margin: 0 auto; position: relative; justify-content: center;}/*ボタンが2つ以上になった場合は　justify-content: center;を削除*/
+.ftBut li{width:45%; position: relative; background-color: #1C547B; text-align: center; border-radius: min(1.66vw , 20px);}
+.ftBut li span{color: white; position: relative; font-size: min(1.83vw, 2.2rem); padding: min(2.9vw , 35px) 0; display: block;}
+.ftBut li span::after{content: ''; position: absolute; right: 4%; bottom: 20%; background: url("../img/iconLink.png") no-repeat center center; width: min(2.5vw, 30px); height: min(2.16vw, 26px);}
+
+.copy {padding: min(10.41vw , 125px) 0 min(5.0vw , 60px) 0; font-size: min( 1.16vw , 1.4rem ); color: #999999; text-align: center;}
+
+#pagetop {position: fixed; bottom: 4%; right: 3%; z-index: 10;}
+#pagetop a {display:block; width: 50px;	height: 50px; background: #0054A6; text-align:center; color: #fff; text-decoration:none; line-height: 50px; }
+
+/* ----------------------------------------------------
+トップビジュアル
+---------------------------------------------------- */
+#homVisual{position: relative; background: #0054A6; padding: 0 7% 25vw 7%; z-index: 1;}
+/*#homVisual{position: relative; background: #0054A6; padding: 0 7% 20vw 7%; z-index: 1;}*/
+#homVisual .visualInner{align-items: center;}
+#homVisual .homTitle{width: 54%;}
+#homVisual .homTitle h1{margin: min(2.9vw , 35px) 0 min(1.66vw, 20px) 0;}
+#homVisual .homTitle p{display: inline; background-color: white; color: #0054A6; border-radius: min(0.58vw, 7px); padding: min(0.58vw , 7px) min(2.9vw , 35px); margin-right: 1em; font-weight: 600;}
+#homVisual .homTitle p.tokusetu{display: inline; background-color: transparent; color: #fff; padding: min(0.58vw , 7px); margin-right: 0; font-weight: 600; letter-spacing: 0.1em;}
+#homVisual .homIlu{width: 34%;}
+#homVisual aside{color: white; position: absolute; right: 0; bottom: 30%; transform-origin: 100% 0%; transform-origin: 70% -100%; transform: rotate(-90deg) translateY(-50%) translateX(50%);}
+
+
+/* ----------------------------------------------------
+大学紹介
+---------------------------------------------------- */
+#university{
+	background: url("../img/blueBackTop.png") no-repeat center top,linear-gradient(180deg, rgba(199,227,238,0) 0%, rgba(199,227,238,0) 20%, rgba(199,227,238,1) 20%, rgba(199,227,238,1) 100%);
+	background-size: 100% auto;
+	margin-top: -25vw; z-index: 2; position: relative; padding-top: 8vw;}
+
+#university .innerWhite h3::before {width: min(11.25vw , 135px); height: min(7.9vw , 95px); background: url("../img/iconTitle01.png") 0 0 no-repeat; background-size: cover;}
+
+
+/* ----------------------------------------------------
+医学部
+---------------------------------------------------- */
+#medicine{background: url("../img/blueBackBottom.png") no-repeat center top; background-size: 100% auto; position: relative; padding: 7vw 0 4vw 0; }
+#medicine .innerWhite{background: url("../img/whiteBack02.png") center min(4.16vw , 50px) no-repeat; background-size: 100% auto;}
+#medicine .innerWhite h3::before {width: min(11.25vw , 135px); height: min(10vw , 120px); background: url("../img/iconTitle02.png") 0 0 no-repeat; background-size: cover;}
+
+/* ----------------------------------------------------
+看護各部
+---------------------------------------------------- */
+#nurse{
+	background: url("../img/blueBackTop.png") no-repeat center top;
+	background-size: 100% auto;
+	margin-top: 0; z-index: 2; position: relative; padding: 8vw 0 0 0; /*padding: 8vw 0 8vw 0; プレゼンテーションオープンになったらこちらを使用*/}
+#nurse .innerWhite{padding-bottom: min(8.3vw , 100px);}
+/*#nurse .innerWhite{padding-bottom: min(29.1vw , 350px);} プレゼンテーションオープンになったらこちらを使用*/
+#nurse .innerWhite h3::before {width: min(9.66vw , 116px); height: min(8.58vw , 103px); background: url("../img/iconTitle03.png") 0 0 no-repeat; background-size: cover;}
+
+/* ----------------------------------------------------
+プレゼン
+---------------------------------------------------- */
+#presentation{
+	background: url("../img/whiteBack03.png") no-repeat center top,linear-gradient(180deg, rgba(199,227,238,0) 0%, rgba(199,227,238,0) min(12.5vw , 150px), rgba(199,227,238,1) min(12.5vw , 150px), rgba(199,227,238,1) 100%);
+	background-size: 100% auto;
+	margin-top: min(-20.83vw , -25rem); z-index: 2; position: relative; padding: 10vw 0 7vw 0;}
+
+#presentation .inner{width:80%; max-width: 1200px; margin: 0 auto; position: relative;}
+#presentation .inner h3{color: #1C547B; font-size: min(2.0vw , 3rem); font-weight: 600; letter-spacing: 0.3em; position: relative; padding: min(10vw , 120px) 0 0 0;}
+#presentation .inner h3::before {content: ''; position: absolute; right: 5%; bottom: 0; width: min(16.6vw , 200px); height: min(10.41vw , 125px); background: url("../img/iconTitle04.png") 0 0 no-repeat; background-size: cover;}
+.preBox{}
+.preBox li{width: 23%; position: relative; margin-bottom: min(2.9vw , 35px);}
+#presentation .illust04{top: 6.5vw; left: 2%; width: 26%;}
+#presentation .illust05{top: 2.5vw; right: 2%; width: 12%;}
+
+
+/* ----------------------------------------------------
+共通設定
+---------------------------------------------------- */
+.innerWhite{width:80%; max-width: 1200px; margin: 0 auto; background: url("../img/whiteBack.png") center min(4.16vw , 50px) no-repeat; background-size: 100% auto; text-align: center; position: relative; z-index: 2;}
+.innerWhite h3{color: #1C547B; font-size: min(2.0vw , 3rem); font-weight: 600; letter-spacing: 0.3em; position: relative; padding: min(10vw , 120px) 0 0 0;}
+.innerWhite h3::before {content: ''; position: absolute; left: 50%; top: 0%; transform: translateX(-50%);}
+.innerWhite h3 span{color: #37A9DD; font-size: min(1.33vw , 1.6rem); font-family: 'Jost', sans-serif; font-weight: 600; line-height: min(1.66vw , 2rem); display: block; letter-spacing: 0;}
+.innerWhite h3 p{color: #37A9DD; font-size: min(5.0vw , 6rem); font-family: 'Jost', sans-serif; font-weight: 400; line-height:min(4.5vw , 5.5rem); margin: 0; letter-spacing: 0;}
+.readBox{margin: min(2.9vw , 35px) 0 min(5vw , 60px) 0; line-height: min(3.33vw , 45px);}
+.movieBox{justify-content: center;}
+.movieBox li{width: 30%; background-color: white; border-radius: min(0.58vw, 7px); box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2); padding: min(1.66vw , 20px); box-sizing: border-box; position: relative;}
+.movieBox li .mvSumne{position: relative;}
+.movieBox li .mvSumne::before{content: ''; position: absolute; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.4); background-size: cover; width: 100%; height: 100%;}
+.movieBox li .mvSumne::after{content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); background: url("../img/iconMovie.png") no-repeat center center; width: min(3.75vw, 45px); height: min(3.75vw, 45px);}
+.movieBox li .mvTitle{font-size: min(1.41vw , 1.7rem); margin-top: min(0.58vw, 7px);}
+.movieBox li .mvTime{font-size: min(1.3vw , 1.6rem); color: #999;}
+
+.movieBox li.mvSpecial .mvTitle{letter-spacing: -0.1em;}
+.iconSpecial{position:absolute; top: min(-1.66vw , -20px); left: 0; z-index: 2;}
+
+.movieBox li:nth-child(2){margin: 0 5%;}
+.movieBox li:nth-child(4){margin: min(2.9vw , 35px) 0 0 0;}
+.movieBox li:nth-child(5){margin: min(2.9vw , 35px) 5% 0 5%;}
+.movieBox li:nth-child(6){margin: min(2.9vw , 35px) 0 0 0;}
+
+.comingsoon{position: relative;}
+.comingsoon::before{content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); border-radius: min(0.58vw, 7px);}
+.movieBox li.comingsoon .mvSumne::after{content: 'coming soon...'; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); background: none; width: 90%; height: auto; color: white;}
+
+
+#medicine .movieBox li:nth-child(1){margin: 0 2.5% 0 0;}
+#medicine .movieBox li:nth-child(2){margin: 0 0 0 2.5%;}
+#nurse .movieBox li:nth-child(2){margin: 0 5%;}
+
+.singleBut{width: 65%; margin: min(6.6vw , 80px) auto 0 auto; background-color: #1C547B; text-align: center; padding: min(1.66vw , 2rem) 0; border-radius: min(1.66vw , 20px);}
+.singleBut span{color: white; position: relative; font-size: min(1.83vw, 2.2rem); padding-right: 2em;}
+.singleBut span::after{content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); background: url("../img/iconLink.png") no-repeat center center; width: min(2.5vw, 30px); height: min(2.16vw, 26px);}
+
+
+
+/*イラスト設定*/
+.illust01{position: absolute; top: min(11.25vw , 135px); left: 2%; width: 12%;}
+.illust02{position: absolute; top: min(20.8vw , 250px); right: -5%; width: 38%;}
+.illust03{position: absolute; bottom: 0; right: 0; width: 12%;}
+.illust04{position: absolute; top: min(12.5vw , 150px); left: 2%; width: 26%;}
+.illust05{position: absolute; top: min(19.1vw , 230px); right: 2%; width: 12%;}
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+pcSetting
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@media (min-width:768px) {
+/* ----------------------------------------------------
+common(pc)
+---------------------------------------------------- */
+/* hover */
+a:hover {
+  opacity: .8 !important; filter: alpha(opacity=80);
+  text-decoration: none;
+  -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
+}
+a img:hover {
+  opacity: .8 !important; filter: alpha(opacity=80);
+  -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
+}
+.clickable:hover {
+  filter: alpha(opacity=80) !important;	opacity: .8 !important;
+  -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
+}
+.clickable:hover {
+  opacity: 0.7;
+  -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; -o-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out;
+}
+
+.wm-rl {  -ms-writing-mode: tb-rl;  writing-mode: vertical-rl;}
+	
+}
+
+@media (max-width: 1700px) {
+#presentation{margin-top: -25vw;}
+}
+@media (max-width: 1400px) {
+#presentation{margin-top: -30vw;}
+}
+
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+tabletSetting
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@media (max-width: 1200px) and (min-width: 768px) {
+#presentation{margin-top: -32vw; padding: 8vw 0 7vw 0;}
+}
+
+
+/*━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+spSetting
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@media (max-width: 767px) {
+#mainContainer{ width: 100%; position: relative; padding-top: 16vw;}
+	
+.br_spOnly{display:block;}
+.br_pcOnly{display:none;}
+  
+/* ----------------------------------------------------
+header (sp)
+---------------------------------------------------- */
+#header  {height: 16vw;  padding: 3vw 18vw 3vw 4vw ;}
+#header #hd-logo img {height: 10vw; }
+
+#btnGlobal {right: 2vw; top: 2vw; height: 12vw; width: 12vw;  z-index: 120; }
+#btnGlobal .btnWrapGlobal { width:6.5vw; height:4.5vw; margin-top:0.7vw;}
+#btnGlobal p { font-size:3vw;}
+#grandMenu {padding: 20vw 5%;}
+#grandMenu #navGlobal li { font-size:4vw;}
+#grandMenu #navGlobal li a { padding: 5vw 0; }
+#grandMenu #navGlobal li a::after {right: 3vw; width: 2vw; height: 2vw;}
+#grandMenu #navGlobal li.btn-navChild .navChild a::after { transform: translateY(-50%)rotate(45deg);}
+#grandMenu #navGlobal li.btn-navChild .navChild {margin-bottom:2vw;}
+#grandMenu #navGlobal li.btn-navChild .navChild  li { font-size:3.6vw; padding: 0 ; margin: 1vw 0; border-radius:1vw; line-height: 1.4;}
+#grandMenu #navGlobal li.btn-navChild .navChild  li a {padding: 4vw 10vw 4vw 4vw ; display: block;}
+
+/* ----------------------------------------------------
+footer (sp)
+---------------------------------------------------- */
+#footer {margin-top:10vw;}/*プレゼンテーションオープンになったら削除*/
+.copy {margin-top: 3vw; font-size: 3.2vw; text-align: center;}
+
+.ftBut{width:90%;}
+.ftBut li{width:47%; border-radius: 2vw;}
+.ftBut li span{font-size: 3.2vw; padding: 4.5vw 0;}
+.ftBut li span::after{bottom: 20%; width: 3.91vw; height: 3.39vw; background-size: cover;}
+	
+#pagetop {position: fixed; bottom: 6%; right: 3%; z-index: 10;}
+#pagetop a {width: 6.5vw; height: 6.5vw; line-height: 6.5vw; font-size: 2.8vw;}	
+	
+	
+/* ----------------------------------------------------
+トップビジュアル
+---------------------------------------------------- */
+#homVisual{padding: 0 7% 30vw 3%;}
+/*#homVisual{padding: 0 7% 20vw 3%;}*/
+#homVisual .visualInner{padding: 6vw 0 12vw 0;}
+#homVisual .homTitle{width: 65%;}
+#homVisual .homTitle h1{margin: 3vw 0 2vw 0;}
+#homVisual .homTitle p{border-radius: 1vw; padding: 1vw 3vw;}
+#homVisual .homIlu{width: 30%;}
+#homVisual aside{bottom: 20%; font-size: 2vw;}	
+	
+#homVisual .homTitle p.tokusetu{display: block; padding: 2vw; }
+	
+/* ----------------------------------------------------
+大学紹介
+---------------------------------------------------- */
+#university{margin-top: -25vw; padding-top: 8vw;}
+#university .innerWhite h3::before {width: 17.6vw; height: 12.3vw;}	
+	
+	
+/* ----------------------------------------------------
+医学部
+---------------------------------------------------- */
+#medicine{padding: 7vw 0 4vw 0; }
+#medicine .innerWhite h3 {padding: 18vw 0 0 0;}
+#medicine .innerWhite h3::before {width: 17.6vw; height: 15.6vw;}
+
+/* ----------------------------------------------------
+看護各部
+---------------------------------------------------- */
+#nurse{background: url("../img/blueBackTop.png") no-repeat center top,linear-gradient(180deg, rgba(199,227,238,0) 0%, rgba(199,227,238,0) 20%, rgba(199,227,238,1) 20%, rgba(199,227,238,1) 100%);
+	background-size: 100% auto;}
+#nurse .innerWhite{padding-bottom: 6vw;}
+/*#nurse .innerWhite{padding-bottom: 30vw;} プレゼンテーションオープンになったらこちらを使用*/
+#nurse .innerWhite h3::before {width: 15.1vw; height: 13.4vw;}
+
+/* ----------------------------------------------------
+プレゼン
+---------------------------------------------------- */
+#presentation{
+	background: url("../img/whiteBack03.png") no-repeat center top,linear-gradient(180deg, rgba(199,227,238,0) 0%, rgba(199,227,238,0) min(12.5vw , 150px), rgba(199,227,238,0) min(12.5vw , 150px), rgba(199,227,238,0) 100%);
+	background-size: contain;
+	margin-top: -25vw; padding: 10vw 0 7vw 0;}
+
+#presentation .inner{width:90%;}
+#presentation .inner h3{font-size: 5vw; padding: 18vw 0 0 0; text-align: center; margin-top: -15vw; letter-spacing: inherit;}
+#presentation .inner h3::before {left: 50%; top: 0; transform: translateX(-50%); width: 26vw; height: 16.2vw;}
+.preBox{}
+.preBox li{width: 47%; margin-bottom: 5vw; line-height: 5.7vw;}
+#presentation .illust04{top: 6.5vw; left: 2%; width: 26%;}
+#presentation .illust05{top: 2.5vw; right: 2%; width: 12%;}	
+
+/* ----------------------------------------------------
+共通設定
+---------------------------------------------------- */
+.innerWhite{width:90%;}
+.innerWhite h3{font-size: 5vw; padding: 15vw 0 0 0;}
+.innerWhite h3 span{font-size: 2.0vw; line-height: 2.8vw;}
+.innerWhite h3 p{font-size: 6vw; line-height:4vw;}
+.readBox{margin: 4vw 0 8vw 0; text-align: left;}
+
+.movieBox{justify-content: space-between;}
+.movieBox li{width: 47%; border-radius: 2vw; padding: 3vw; margin: 0 0 5vw 0;}
+.movieBox li .mvSumne::after{width: 5.8vw; height: 5.8vw; background-size: cover;}
+.movieBox li .mvTitle{font-size: 3.4vw; line-height: 5vw; margin-top: 1vw;}
+.movieBox li .mvTime{font-size: 2.8vw; margin-top: 1vw;}
+.movieBox li.mvSpecial .mvTitle{letter-spacing: -0.1em;}
+.iconSpecial{position:absolute; top: -5vw; width: 50%;}
+
+.movieBox li:nth-child(2){margin: 0 0 5vw 0;}
+.movieBox li:nth-child(4){margin: 0 0 5vw 0;}
+.movieBox li:nth-child(5){margin: 0 0 5vw 0;}
+.movieBox li:nth-child(6){margin: 0 0 5vw 0;}
+	
+#medicine .movieBox li:nth-child(1){margin: 0 0 0 0;}
+#medicine .movieBox li:nth-child(2){margin: 0 0 0 0;}
+#nurse .movieBox li:nth-child(1), #nurse .movieBox li:nth-child(2){margin: 0 0 5vw 0;}
+	
+.comingsoon::before{border-radius: 2vw;}
+
+.singleBut{width: 100%; margin: 8vw auto 0 auto; padding: 2vw 0; border-radius: 2vw;}
+.singleBut span{font-size: 3.2vw; padding-right: 2em;}
+.singleBut span::after{width: 3.91vw; height: 3.39vw; background-size: cover;}	
+
+	
+@media (orientation: portrait) { /* スマホ縦 */
+/* ----------------------------------------------------
+header (sp)
+---------------------------------------------------- */
+#header  {height: 16vw!important;}
+#header #hd-logo img {height: 10vw!important;}
+
+#btnGlobal {right: 2vw; top: 2vw; height: 12vw; width: 12vw;  z-index: 120; }
+#btnGlobal .btnWrapGlobal { width:6.5vw; height:4.5vw; margin-top:0.7vw;}
+#btnGlobal p { font-size:3vw;}
+#grandMenu {padding: 20vw 5%;}
+#grandMenu #navGlobal li { font-size:4vw;}
+#grandMenu #navGlobal li a { padding: 5vw 0; }
+
+#mainContainer {
+    padding-top: 16vw!important;
+	}	
+	
+.readBox{line-height: 6.8vw!important;}
+.innerWhite h3,#presentation .inner h3 {font-size: 5vw!important;}
+
+.movieBox li .mvTitle {font-size: 3.4vw!important; line-height: 5vw!important;}
+.movieBox li .mvTime {font-size: 2.8vw!important;}
+.iconSpecial {width: 50%!important;}
+.singleBut span {font-size: 3.2vw!important;}	
+	
+	
+}	
+	
+	
+	
+@media (orientation: landscape) {/* スマホ横 */
+  
+/* ----------------------------------------------------
+header (sp)
+---------------------------------------------------- */
+#header  {height: 10vw;}
+#header #hd-logo img {height: 7vw;}
+
+#btnGlobal {right: 2vw; top: 2vw; height: 6vw; width: 6vw;  z-index: 120; }
+#btnGlobal .btnWrapGlobal { width:3.5vw; height:3vw; margin-top:0vw;}
+#grandMenu {padding: 10vw 5%;}
+#grandMenu #navGlobal li { font-size:3.2vw;}
+#grandMenu #navGlobal li a { padding: 3vw 0; }
+
+#mainContainer {
+    padding-top: 10vw;
+	}
+/* ----------------------------------------------------
+footer (sp)
+---------------------------------------------------- */
+
+.copy {margin-top: 2vw; font-size: 2.2vw; text-align: center;}
+
+.ftBut{width:90%;}
+.ftBut li{width:47%; border-radius: 2vw;}
+.ftBut li span{font-size: 2.6vw; padding: 2.5vw 0;}
+.ftBut li span::after{bottom: 20%; width: 3.91vw; height: 3.39vw; background-size: cover;}
+	
+#pagetop {position: fixed; bottom: 6%; right: 3%; z-index: 10;}
+#pagetop a {width: 6.5vw; height: 6.5vw; line-height: 6.5vw; font-size: 2.8vw;}	
+	
+}
+	
+	
+.readBox {line-height: 4.8vw;}	
+.innerWhite h3,#presentation .inner h3 {font-size: 4vw;}
+.movieBox li .mvTitle {font-size: 2.2vw; line-height: 4vw;}
+.movieBox li .mvTime {font-size: 2.2vw;}
+.iconSpecial {width: 40%;}
+.singleBut span {font-size: 2.6vw;}
+	
+#presentation {padding: 10vw 0 2vw 0;}
+	
+}
+
+
+
+/* ----------------------------------------------------
+20250603-Addition
+---------------------------------------------------- */
+.application-box {
+	color: white;
+	padding: 2rem 2rem 2.5rem 2rem;
+	border-radius: 8px;
+	border: solid #fff 2px;
+	text-align: center;
+}
+
+.ent-title {
+	font-size: 2.0rem;
+	margin: -40px auto 15px auto;
+	background: #0054a6;
+	width: 200px;
+}
+
+.button-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.entry-item a {
+  background-color: white;
+  color: #005bac;
+  border-radius: 8px;
+  padding: 1.0rem 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s;
+  font-size: 1.8rem;
+  justify-content: center;
+  width: 100%; /* ← 横幅はli側で制御 */
+  box-sizing: border-box;
+}
+
+.entry-item {
+	width: auto;
+}
+.w-25 {
+  width: 28%;
+}
+.ent-icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+.entry-link {
+	color: white;
+	text-align: left;
+	line-height: 2.2rem;
+	 font-size: 1.5rem;
+	margin-top: 2px;
+}
+.entry-link a {
+	color: white;
+	text-decoration: underline;
+}
+.sp-only-no-br {
+  display: inline; /* もしくは block など、通常の状態 */
+}
+.pc_box {display: block;}
+.sp_box {display: none;}
+@media (max-width: 1200px) and (min-width: 768px)  {
+.ent-title {
+	font-size: 1.8rem;
+	margin: -40px auto 15px auto;
+	background: #0054a6;
+	margin-bottom: 10px;
+	width: 200px;
+}
+.application-box {
+	padding: 2rem 2rem 2.0rem 2rem;
+	border-radius: 8px;
+}
+.entry-item a {
+  font-size: 1.5rem;
+}
+.w-25 {
+  width: 45%;
+}	
+.entry-link {
+	text-align: center;
+	margin-top: -10px;
+}
+.sp-only-no-br {
+    display: none; /* スマートフォンでは非表示にする */
+  }
+	
+}
+
+@media (max-width: 767px) {
+.pc_box {display: none;}
+.sp_box {display: block;}
+.application-box {
+	color: white;
+	padding: 1rem 0.3rem 2.0rem 0.3rem;
+	border-radius: 8px;
+	border: solid #fff 1px;
+	text-align: center;
+	margin-top: -35px;
+}
+
+.ent-title {
+	font-size: 3.5vw;
+	/*margin: -25px auto 10px auto; */
+	background: #0054a6;
+	display: inline-block;
+	position: relative;
+	width: auto;
+	padding: 0 10px 0;
+}
+
+.button-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.entry-item a {
+  background-color: white;
+  color: #005bac;
+  border-radius: 8px;
+  padding: 0.5rem 0.5rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s;
+  font-size: 3.0vw;
+  justify-content: center;
+  width: 100%; /* ← 横幅はli側で制御 */
+  box-sizing: border-box;
+}
+
+.entry-item {
+	width: auto;
+}
+.w-25 {
+  width: 25%;
+}
+.ent-icon {
+	width: 14px;
+	height: 14px;
+	margin-right: 0px;
+}
+.entry-link {
+	color: white;
+	text-align: left;
+	line-height: 4.0vw;
+	 font-size: 2.6vw;
+	margin-top: 0px;
+}
+.entry-link a {
+	color: white;
+	text-decoration: underline;
+}
+.sp-only-no-br {
+  display: inline; /* もしくは block など、通常の状態 */
+}
+@media (orientation: portrait) { /* スマホ縦 */
+.ent-title {
+	top: -6vw;
+}
+.button-list {
+  margin: -7vw 0 0;
+  gap: 1rem;
+}
+}
+@media (orientation: landscape) {/* スマホ横 */
+.application-box {
+	margin-top: -10vw;
+}
+.ent-title {
+	top: -3vw;
+}
+.button-list {
+  margin: -3.5vw 0 0;
+  gap: 2rem;
+}
+.entry-link {
+	line-height: 3.5vw;
+	 font-size: 2.6vw;
+	margin-top: 0px;
+}
+}
+}
+
