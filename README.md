@@ -14,6 +14,8 @@
 - `medicineConsultationMeta`、`nursingMiniOpenCampusDates`: 関連イベントの年度・開催日
 - `medicineConsultationUrl`、`nursingMiniOpenCampusUrl`: 関連イベント
 - `medicineApplicationUrl`、`nursingApplicationUrl`: 両学部の参加申込ページ
+- `medicineApplicationStatus`、`nursingApplicationStatus`: 学部別の申込受付状態
+- `medicineApplicationLabel`、`medicineApplicationMessage`、`medicineApplicationDeadline`: 医学部オンライン講座の申込・視聴案内
 - `nursingStudentInterviewUrl`、`nursingAlumniInterviewUrl`: 看護学部インタビュー記事
 - `livingAloneUrl`、`accessUrl`: 一人暮らし・交通アクセス
 - `xUrl`、`instagramUrl`: 公式SNS

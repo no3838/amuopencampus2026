@@ -43,13 +43,18 @@
       message: `${eventYear}年度の参加申込受付は終了しました。`
     }
   };
-  const applicationState = applicationStates[config.status] || applicationStates.upcoming;
-
   document.querySelectorAll("[data-application-link]").forEach((link) => {
+    const stateKey = link.dataset.applicationStateKey;
+    const labelKey = link.dataset.applicationLabelKey;
+    const messageKey = link.dataset.applicationMessageKey;
+    const linkStatus = stateKey && typeof config[stateKey] === "string" ? config[stateKey] : config.status;
+    const applicationState = applicationStates[linkStatus] || applicationStates.upcoming;
+    const applicationLabel = labelKey && typeof config[labelKey] === "string" ? config[labelKey] : applicationState.label;
+    const applicationMessage = messageKey && typeof config[messageKey] === "string" ? config[messageKey] : applicationState.message;
     const status = link.querySelector("[data-application-status]");
     const message = link.querySelector("[data-application-message]");
-    if (status) status.textContent = applicationState.label;
-    if (message) message.textContent = applicationState.message;
+    if (status) status.textContent = applicationLabel;
+    if (message) message.textContent = applicationMessage;
 
     link.classList.toggle("is-disabled", !applicationState.enabled);
     if (applicationState.enabled) {
