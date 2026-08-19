@@ -4,9 +4,7 @@ window.OC_VIDEO_DATA = {
     { id: "FGUmLQmHCc0", title: "スペシャルムービー 大学紹介（ロング）", thumbnail: "video/assets/img/movie01-01.jpg", group: "introduction" },
     { id: "JAzDU4Dst6w", title: "大学紹介（ショート）", thumbnail: "video/assets/img/movie01-02.jpg", group: "introduction" },
     { id: "kfRCR0_-ZZk", title: "施設紹介", thumbnail: "video/assets/img/movie01-06.jpg", group: "introduction" },
-    { id: "PVpIT_a5bIg", title: "ドクターヘリ紹介", thumbnail: "video/assets/img/movie01-03.jpg", group: "introduction" },
-    { id: "sBEx_FAplLg", title: "病室紹介", thumbnail: "video/assets/img/movie01-04.jpg", group: "introduction" },
-    { id: "h8rda-pSFOw", title: "最新医療紹介", thumbnail: "video/assets/img/movie01-05.jpg", group: "introduction" }
+    { id: "PVpIT_a5bIg", title: "ドクターヘリ紹介", thumbnail: "video/assets/img/movie01-03.jpg", group: "introduction" }
   ],
   medicine: [
     { id: "4oQZcCocEiE", title: "医学部紹介", thumbnail: "video/assets/img/movie02-01.jpg", group: "introduction" },

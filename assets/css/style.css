@@ -176,7 +176,7 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: 0.02em; }
 }
 
 .hero__eyebrow { margin-bottom: 12px; font-size: clamp(0.65rem, 1vw, 0.78rem); font-weight: 800; letter-spacing: 0.28em; }
-.hero h1 { margin: 0; font-size: clamp(3.2rem, 7.2vw, 7.1rem); font-weight: 900; line-height: 0.84; letter-spacing: -0.045em; text-shadow: 0 8px 30px rgba(0, 0, 0, 0.16); }
+.hero h1 { margin: 0; font-size: clamp(3.5rem, 7.8vw, 7.7rem); font-weight: 900; line-height: 0.84; letter-spacing: -0.045em; text-shadow: 0 8px 30px rgba(0, 0, 0, 0.16); }
 .hero h1 span { display: block; }
 .hero h1 span:last-child { margin-top: .06em; margin-left: .12em; color: var(--yellow); font-size: .88em; letter-spacing: -.012em; }
 .hero__catch { margin: 24px 0 0; padding-left: 14px; border-left: 3px solid var(--yellow); font-size: clamp(.88rem, 1.35vw, 1.1rem); font-weight: 800; letter-spacing: .12em; text-shadow: 0 4px 18px rgba(0,0,0,.24); }
@@ -614,7 +614,7 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: 0.02em; }
   .hero__video { object-position: 56% center; }
   .hero__veil { background: linear-gradient(0deg, rgba(2,18,32,.66) 0%, rgba(2,18,32,.08) 66%); }
   .hero__content { left: 24px; right: 24px; bottom: 68px; }
-  .hero h1 { font-size: clamp(3.6rem, 20vw, 6rem); }
+  .hero h1 { font-size: clamp(3.8rem, 21vw, 6.3rem); }
   .hero__eyebrow { font-size: .6rem; }
   .hero__catch { margin-top: 20px; font-size: .82rem; letter-spacing: .08em; }
   .oc-signature__inner { min-height: 156px; gap: 22px; }
