@@ -544,7 +544,6 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: 0.02em; }
 .movie-hero h1 span { color: var(--yellow); }
 .movie-hero__ja { margin-bottom: 26px; font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 800; }
 .movie-hero__copy > p:last-child { max-width: 600px; margin-bottom: 0; color: rgba(255,255,255,.84); }
-.movie-hero__symbol { position: absolute; z-index: 1; right: -70px; bottom: -170px; width: min(48vw, 580px); height: auto; opacity: .18; filter: grayscale(1) brightness(0) invert(1); }
 .movie-category { background: #fff; }
 .movie-category--medicine { background: var(--blue-soft); }
 .movie-category--nursing { background: var(--pink-soft); }
@@ -716,7 +715,6 @@ h1, h2, h3 { line-height: 1.25; letter-spacing: 0.02em; }
   .movie-hero, .movie-hero__inner { min-height: 590px; }
   .movie-hero__inner { padding-top: 52px; align-items: center; }
   .movie-hero h1 { font-size: clamp(3.7rem, 18vw, 6rem); }
-  .movie-hero__symbol { width: 75vw; right: -28vw; bottom: -12vw; }
   .section-index { top: var(--header-height); overflow-x: auto; }
   .section-index__inner { width: max-content; min-width: 100%; }
   .section-index a { min-width: 145px; padding-inline: 16px; }
